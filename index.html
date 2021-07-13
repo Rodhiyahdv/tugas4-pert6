@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodhiyah | Tugas 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container"><h3>Tugas 4 | Function</h3></div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="wrapper">
+                <div class="exercise">
+                    <p style="font-weight: bold;">Latihan</p> 
+                    <div class="tab">
+                        <p id="showExercise">
+                            1. Buat sebuah function untuk toko online kita. Ikuti poin-poin dibawah ini: <br>
+                            &nbsp;&nbsp;&nbsp; a. Function mempunyai 2 parameter yaitu nama pembeli dan produk yang dibeli <br>
+                            &nbsp;&nbsp;&nbsp; b. Function akan mengembalikan nilai "Terima kasih (nama pembeli) telah membeli produk (produk yang dibeli)" <br>
+                            &nbsp;&nbsp;&nbsp; c. Panggil function dengan menggunakan console.log() <br><br>
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <p id="showExercise">
+                            2. Buat sebuah function helper untuk convert temperatur Celcius ke Fahrenherit dan sebaliknya. Ikuti poin-poin dibawah ini: <br>
+                            &nbsp;&nbsp;&nbsp; a. Buat sebuah function helper lalu gunakan pada function converternya. Seperti contoh dibawah ini. <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jadi kita tinggal membuat function helper dan function utama untuk convert fahrenheit ke Celcius <br>
+                            <img src="soal2.png" height="150">
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <p id="showExercise">
+                            3. Kita akan membuat program untuk menghitung umur kucing dalam usia manusia. Poin-poinnya adalah: <br>
+                            &nbsp;&nbsp;&nbsp; - Pada usia 1 tahun, umur kucing adalah 15 kali umur manusia <br>
+                            &nbsp;&nbsp;&nbsp; - Pada usia 2 tahun, umur kucing adalah 24 kali umur manusia <br>
+                            &nbsp;&nbsp;&nbsp; - Pada usia 3 tahun (> 24 tahun) dan seterusnya umur kucing adalah 4 kali umur manusia. <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jadi jika umur kucing saat ini 4 tahun berarti dalam kalendar tahun kucing, umurnya adalah 32 tahun <br>
+                            &nbsp;&nbsp;&nbsp; - Buat sebuah ARROW function yang menerima parameter umur kucing berdasarkan perhitungan tahun manusia <br><br>
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <p id="showExercise">
+                            4. Buat sebuah function untuk mengubah format semua string menjadi huruf kecil. <br>
+                            &nbsp;&nbsp;&nbsp; - Menerima 1 parameter string <br>
+                            &nbsp;&nbsp;&nbsp; - Gunakan single line block function <br>
+                            &nbsp;&nbsp;&nbsp; - Output adalah string yang telah diubah formatnya menjadi lower case <br>
+                            &nbsp;&nbsp;&nbsp; - Gunakan built in method string <br><br>
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <p id="showExercise">
+                            5. Buat tampilan untuk seluruh soal diatas. Buat sekreatif teman-teman. 1 soal = 1 fitur = 1 page. <br><br>
+                        </p>
+                    </div>
+
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                          <button type="button" id="submitBtn">Submit</button>
+                        </div>
+                    </div>
+                </div>                            
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">Copyright &copy; 2021 (Jawaban Soal No.5)</div>
+    </footer>
+    <script src="function-6.js"></script>
+
+    <script type="text/javascript">
+        // Soal No. 5
+        // Buat tampilan untuk seluruh soal diatas. Buat sekreatif teman-teman. 1 soal = 1 fitur = 1 page.
+        // Jawaban
+        let currentTab = 0;
+        showTab(currentTab);
+        
+        function showTab(n) {
+          let x = document.getElementsByClassName("tab");
+          x[n].style.display = "block";
+          if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+            document.getElementById("submitBtn").style.display = "none";
+          } else {
+            document.getElementById("prevBtn").style.display = "inline";
+            document.getElementById("submitBtn").style.display = "none";
+          }
+          if (n == (x.length - 1)) {
+            document.getElementById("submitBtn").style.display = "inline";
+            document.getElementById("prevBtn").style.display = "none";
+            document.getElementById("nextBtn").style.display = "none";
+          } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+            document.getElementById("submitBtn").style.display = "none";
+          }
+        };
+
+        function nextPrev(n) {
+          let x = document.getElementsByClassName("tab");
+          
+          x[currentTab].style.display = "none";
+          currentTab = currentTab + n;    
+         
+          showTab(currentTab);
+        };
+        </script>
+</body>
+</html>

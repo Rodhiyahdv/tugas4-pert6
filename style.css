@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color:rosybrown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    height: auto;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+main {
+    background-color: whitesmoke;
+}
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1368px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;    
+}
+
+.wrapper {
+    width: 75%;
+    height: 500px;
+    margin: auto;
+    padding: 15px;
+    /* background-color: silver; */
+    line-height: 30px;
+}
+
+.exercise {
+    margin: auto;
+    padding: 30px;
+    background-color: silver;
+    line-height: 30px;
+    height: 400px;
+}
+
+.tab {
+    display: none;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+  
